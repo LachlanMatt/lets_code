@@ -9,7 +9,7 @@ use web_sys::{window, HtmlDivElement, HtmlElement, KeyboardEvent};
 
 thread_local! {
   static GAME: Rc<RefCell<SnakeGame>> =
-    Rc::new(RefCell::new(SnakeGame::new(15, 15)));
+    Rc::new(RefCell::new(SnakeGame::new(20, 20)));
 
   static HANDLE_TICK: Closure<dyn FnMut()> = Closure::wrap(Box::new(|| {
     GAME.with(|game| game.borrow_mut().tick());
